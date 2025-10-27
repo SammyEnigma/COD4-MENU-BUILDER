@@ -1,702 +1,798 @@
 <!DOCTYPE text/html>
 <html>
-    <!-- hello -->
-    <!-- https://github.com/SheepWizard/COD4-MENU-BUILDER -->
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/memes.js"></script>
-    </head>
+<!-- hello -->
+<!-- https://github.com/SheepWizard/COD4-MENU-BUILDER -->
 
-    <body>
-        <script>
-        openInNewTab = (url) => {
-            var win = window.open(url, '_blank');
-            win.focus();
-        }
-        </script>
-        <div class="sidenav customslider">
-            <img src="images/title.png" class="title">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
 
-            <p1 id="introtoggle" class="cursor extrathicc">Introduction</p1>
-            <div class="optionbackground introtoggle">
-                <p1>This is a website to build .menu files for Call of Duty 4 (will probably also work for WaW).
-                    <br> See the help section for information on building a menu.
-                    <br><br> You can follow the project and help contribute here: <a href="https://github.com/SheepWizard/COD4-MENU-BUILDER">GitHub</a>
+<body>
+	<script>
+		openInNewTab = (url) => {
+			var win = window.open(url, "_blank");
+			win.focus();
+		};
+	</script>
+	<div class="sidenav customslider">
+		<img src="images/title.png" class="title" />
 
-                    <br> If you find any bugs, please report them here: <a href="https://github.com/SheepWizard/COD4-MENU-BUILDER/issues">GitHub issues</a>
+		<details open class="extrathicc">
+			<summary>Introduction</summary>
+			<div class="optionbackground introtoggle">
+				
+				<p1>This is a website to build .menu files for Call of Duty 4 (will
+					probably also work for WaW). <br />
+					See the help section for information on building a menu. <br /><br />
+					You can follow the project and help contribute here:
+					<a href="https://github.com/SheepWizard/COD4-MENU-BUILDER">GitHub</a>
+					
+					<br />
+					If you find any bugs, please report them here:
+					<a href="https://github.com/SheepWizard/COD4-MENU-BUILDER/issues">GitHub issues</a>
+				</p1>
+			</div>
+		</details>
 
-                </p1>
-            </div>
+		<details class="extrathicc">
+			<summary>Help</summary>
+			<div class="helpoptions optionbackground">
+				<button type="button" class="btn margin-10px"
+					onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Getting-started')">
+					Getting started
+				</button>
+				<button type="button" class="btn margin-10px"
+					onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/ItemDef-alignments')">
+					Alignments
+				</button>
+				<button type="button" class="btn margin-10px"
+					onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Loading-your-menu-in-game')">
+					Loading your menu in-game
+				</button>
+				<button type="button" class="btn margin-10px"
+					onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Expressions')">
+					Using expressions
+				</button>
+				<button type="button" class="btn margin-10px"
+					onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Using-script-actions')">
+					Using Script Actions
+				</button>
+				<button type="button" class="btn margin-10px"
+					onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Making-a-button-with-hover-effect')">
+					Making a button
+				</button>
 
-            <p1 id="helptoggle" class="cursor extrathicc">Help</p1>
-            <div class="helpoptions optionbackground" style="display: none">
-                <button type="button" class="btn margin-10px" onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Getting-started')">Getting started</button>
-                <button type="button" class="btn margin-10px" onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/ItemDef-alignments')">Alignments</button>
-                <button type="button" class="btn margin-10px" onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Loading-your-menu-in-game')">Loading your menu in-game</button>
-                <button type="button" class="btn margin-10px" onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Expressions')">Using expressions</button>
-                <button type="button" class="btn margin-10px" onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Using-script-actions')">Using Script Actions</button>
-                <button type="button" class="btn margin-10px" onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Making-a-button-with-hover-effect')">Making a button</button>
-                <button type="button" class="btn margin-10px" onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Adding-background-images')">Adding a background image</button>
-            </div>
+				<button type="button" class="btn margin-10px"
+					onclick="openInNewTab('https://github.com/SheepWizard/COD4-MENU-BUILDER/wiki/Adding-background-images')">
+					Adding a background image
+				</button>
+			</div>
+		</details>
 
-            <p1 id="optiontoggle" class="cursor extrathicc">Builder Options</p1>
-            
-            <div class="buildoptions optionbackground" style="display: none">
-                <button type="button" class="btn1 margin-10px" id="export">Export menu</button>
-                <button type="button" class="btn1 margin-10px" id="zoomin">Zoom in</button>
-                <button type="button" class="btn1 margin-10px" id="zoomout">Zoom out</button>
-                <button type="button" class="btn1 margin-10px" id="imagetoggle">Toggle game image</button>
-                <button type="button" class="btn1 margin-10px" id="outlinetoggle">Toggle screen outline</button>
-                <button type="button" class="btn1 margin-10px" id="screenratio">Toggle screen ratio</button>
-                <p1>Grid snap</p1>
-                <select class="optionselectbox snapgrid" id="gridsnap">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>
-                <button type="button" class="btn1" id="guidelines">Guide lines</button>
-            </div>
+		<details class="extrathicc">
+			<summary>Builder Options</summary>
+			<div class="buildoptions optionbackground">
+				<button type="button" class="btn1 margin-10px" id="export">
+					Export menu
+				</button>
+				<button type="button" class="btn1 margin-10px" id="zoomin">
+					Zoom in
+				</button>
+				<button type="button" class="btn1 margin-10px" id="zoomout">
+					Zoom out
+				</button>
+				<button type="button" class="btn1 margin-10px" id="imagetoggle">
+					Toggle game image
+				</button>
+				<button type="button" class="btn1 margin-10px" id="outlinetoggle">
+					Toggle screen outline
+				</button>
+				<button type="button" class="btn1 margin-10px" id="screenratio">
+					Toggle screen ratio
+				</button>
+				<p1>Grid snap</p1>
+				<select class="optionselectbox snapgrid" id="gridsnap">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="20">20</option>
+					<option value="50">50</option>
+					<option value="100">100</option>
+				</select>
+				<button type="button" class="btn1" id="guidelines">
+					Guide lines
+				</button>
+			</div>
+		</details>
 
-            <p1 id="saveloadtoggle" class="cursor extrathicc">Save / Load</p1>
-            
-            <div class="saveload optionbackground" style="display: none">
-                <button type="button" class="btn1 margin-10px" onclick="quickSave()">Quick Save</button>
-                <button type="button" class="btn1 margin-10px" onclick="loadSaveMenu()">Save/Load Progress</button>
-                <button type="button" class="btn1 margin-10px" onclick="saveProgressFile()">Save progress File</button>
-                <div class="upload-btn-wrapper">
-                    <button type="button" class="btn1 margin-10px" id="">Upload progress File</button>
-                    <input type="file" id="uploadprogress" accept=".txt, .menu, .cmb" >
-                </div>
-            </div>
+		<!-- <p1 id="saveloadtoggle" class="cursor extrathicc">Save / Load</p1> -->
+		<details class="extrathicc">
+			<summary>Save/Load</summary>
 
-            <div class="menudeflist">
-                <p1 id="menudeflisttoggle" class="extrathicc cursor">MenuDef list</p1>
-                <div class="menudeflistdiv optionbackground" style="display: none">
-                    <table id="menudeflist">
+			<div class="saveload optionbackground">
+				<button type="button" class="btn1 margin-10px" onclick="quickSave()">
+					Quick Save
+				</button>
+				<button type="button" class="btn1 margin-10px" onclick="loadSaveMenu()">
+					Save/Load Progress
+				</button>
+				<button type="button" class="btn1 margin-10px" onclick="saveProgressFile()">
+					Save progress File
+				</button>
+				<div class="upload-btn-wrapper">
+					<button type="button" class="btn1 margin-10px" id="">
+						Upload progress File
+					</button>
+					<input type="file" id="uploadprogress" accept=".txt, .menu, .cmb" />
+				</div>
+			</div>
+		</details>
 
-                    </table>
-                </div>
-            </div>
+		<details class="extrathicc">
+			<summary>MenuDef list</summary>
+			<div class="menudeflistdiv optionbackground">
+				<table id="menudeflist"></table>
+			</div>
+		</details>
 
-            <p1 id="menutoggle" class="cursor extrathicc">MenuDef Options</p1>
+		<details open class="extrathicc">
+			<summary>MenuDef Options</summary>
+			<div class="menudefoptions optionbackground" id="menudefoptions">
+				<button type="button" class="btn1" id="newmenudef">
+					New menuDef
+				</button>
+				<table id="menudefoptiontable">
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="name_menu_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								Name
+								<span class="tooltiptext">This is the name of the MenuDef. This name will be used for
+									opening / closing the menu in GSC.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="name_menu" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="rect_menu_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								rect
+								<span class="tooltiptext">Define a rectangle on the screen for the menu to occupy.
+									Menu rectangles may overlap; the last rect defined sits on
+									top. Nested items are offset from this rect's left and top
+									edges (meaning this rect acts as a new "mini-screen" for
+									coordinates for the items inside). ItemDefs can be drawn
+									outside the MenuDef but any interactions with when will not
+									work. e.g. Do not put a button outside the MenuDef</span>
+							</div>
+						</td>
+						<td>
+							<div id="rect_menu" class="multitext">
+								<p1>X </p1><input type="number" class="optionnumberbox" id="x_menu" /><br />
+								<p1>Y </p1><input type="number" class="optionnumberbox" id="y_menu" /><br />
+								<p1>W </p1><input type="number" class="optionnumberbox" id="width_menu" /><br />
+								<p1>H </p1><input type="number" class="optionnumberbox" id="height_menu" /><br />
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="blurworld_menu_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								blurworld
+								<span class="tooltiptext">Blurs the screen behind menu.</span>
+							</div>
+						</td>
+						<td>
+							<input type="number" min="0" max="30" class="optionnumberbox" id="blurworld_menu" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="border_menu_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								border
+								<span class="tooltiptext">Sets a border type.</span>
+							</div>
+						</td>
+						<td>
+							<select class="optionselectbox" id="border_menu">
+								<option value="0">WINDOW_BORDER_NONE</option>
+								<option value="1">WINDOW_BORDER_FULL</option>
+								<option value="2">WINDOW_BORDER_HORZ</option>
+								<option value="3">WINDOW_BORDER_VERT</option>
+								<option value="5">WINDOW_BORDER_RAISED</option>
+								<option value="6">WINDOW_BORDER_SUNKEN</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="bordersize_menu_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								bordersize
+								<span class="tooltiptext">Sets the border thickness. The border is drawn inside of
+									the menu rect. The origin coordinates for nested items is
+									shifted, meaning that "0, 0" for itemDefs changes
+									accordingly to avoid the border.</span>
+							</div>
+						</td>
+						<td>
+							<input type="number" min="0" class="optionnumberbox" id="bordersize_menu" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="bordercolor_menu_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								bordercolor
+								<span class="tooltiptext">Sets the border color.</span>
+							</div>
+						</td>
+						<td>
+							<div id="bordercolor_menu" class="multitext">
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="r_menu" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="g_menu" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="b_menu" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="a_menu" />
+							</div>
+							<input id="bordercolor_menu_picker" type="color" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="onOpen_menu_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								onOpen
+								<span class="tooltiptext">Runs the provided script when the menu opens.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="onOpen_menu" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="" id="onClose_menu_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								onClose
+								<span class="tooltiptext">Runs the provided script when the menu closes.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="onClose_menu"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="" id="onESC_menu_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								onESC
+								<span class="tooltiptext">Runs the provided script when the Escape key (ESC) is
+									pressed. This action usually closes the menu (by opening
+									another).</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="onESC_menu" />
+						</td>
+					</tr>
+				</table>
+				<details open class="extrathicc">
+					<summary>ItemDef list</summary>
+					<p1 id="itemdeftoggle"></p1>
+					<div class="itemdeftogglelist optionbackground">
+						<table id="itemdeflist"></table>
+					</div>
+				</details>
+			</div>
+		</details>
 
-            <div class="menudefoptions optionbackground" id="menudefoptions">
-                <button type="button" class="btn1" id="newmenudef">New menuDef</button>
-                <table id="menudefoptiontable">
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="name_menu_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">Name
-                                <span class="tooltiptext">This is the name of the MenuDef. This name will be used for opening / closing the menu in GSC.</span>
-                            </div>
-                         </td>
-                        <td>
-                            <textarea row="1" class="optionstextbox" id="name_menu"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="rect_menu_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">rect
-                                <span class="tooltiptext">Define a rectangle on the screen for the menu to occupy. Menu rectangles may overlap; the last rect defined sits on top.
-                                Nested items are offset from this rect's left and top edges (meaning this rect acts as a new "mini-screen" for coordinates
-                                for the items inside). ItemDefs can be drawn outside the MenuDef but any interactions with when will not work. e.g. Do not put a button outside the MenuDef</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="rect_menu" class="multitext">
-                                <p1>X </p1><input type="number" class="optionnumberbox" id="x_menu"><br>
-                                <p1>Y </p1><input type="number" class="optionnumberbox" id="y_menu"><br>
-                                <p1>W </p1><input type="number" class="optionnumberbox" id="width_menu"><br>
-                                <p1>H </p1><input type="number" class="optionnumberbox" id="height_menu"><br>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="blurworld_menu_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">blurworld
-                                <span class="tooltiptext">Blurs the screen behind menu.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <input type="number" min="0" max="30" class="optionnumberbox" id="blurworld_menu">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="border_menu_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">border
-                                <span class="tooltiptext">Sets a border type.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <select class="optionselectbox" id="border_menu">
-                                <option value="0">WINDOW_BORDER_NONE</option>
-                                <option value="1">WINDOW_BORDER_FULL</option>
-                                <option value="2">WINDOW_BORDER_HORZ</option>
-                                <option value="3">WINDOW_BORDER_VERT</option>
-                                <option value="5">WINDOW_BORDER_RAISED</option>
-                                <option value="6">WINDOW_BORDER_SUNKEN</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="bordersize_menu_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">bordersize
-                                <span class="tooltiptext">Sets the border thickness. The border is drawn inside of the menu rect. The origin coordinates for nested items is shifted,
-                                meaning that "0, 0" for itemDefs changes accordingly to avoid the border.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <input type="number" min="0" class="optionnumberbox" id="bordersize_menu">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="bordercolor_menu_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">bordercolor
-                                <span class="tooltiptext">Sets the border color.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="bordercolor_menu" class="multitext">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="r_menu">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="g_menu">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="b_menu">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="a_menu">
-                            </div>
-                            <input id="bordercolor_menu_picker" type="color"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="onOpen_menu_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">onOpen
-                                <span class="tooltiptext">Runs the provided script when the menu opens.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <textarea row="1" class="optionstextbox" id="onOpen_menu"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="" id="onClose_menu_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">onClose
-                                <span class="tooltiptext">Runs the provided script when the menu closes.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <textarea row="1" class="optionstextbox" id="onClose_menu"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="" id="onESC_menu_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">onESC
-                                <span class="tooltiptext">Runs the provided script when the Escape key (ESC) is pressed. This action usually closes the menu (by opening another).</span>
-                            </div>
-                        </td>
-                        <td>
-                            <textarea row="1" class="optionstextbox" id="onESC_menu"></textarea>
-                        </td>
-                    </tr>
-                </table>
-                <div class="itemdeflist">
-                    <p1 id="itemdeftoggle" class="extrathicc cursor">ItemDef list</p1>
-                    <div class="itemdeftogglelist optionbackground">
-                        <table id="itemdeflist">
-                        </table>
-                    </div>
-                </div>
-            </div>
+		<details class="extrathicc">
+			<summary>ItemDef Options</summary>
+			<div class="itemdefoptions optionbackground" id="itemdefoptions">
+				<button type="button" class="btn1" id="newitemdef">
+					New itemDef
+				</button>
+				<button type="button" class="btn1" id="finditemdef">Find</button>
+				<table id="itemdefoptiontable">
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="name_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								Name
+								<span class="tooltiptext">Sets a name for the item. Manipulation of an item is done
+									through its name.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="name_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="rect_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								rect
+								<span class="tooltiptext">Defines a rectangular area within a menu. The item's rect
+									is positioned relative to the menu's rect; i.e. the menu's
+									rect acts as a "mini-screen" for the coordinates of item
+									rect. This shifting eases the relocating of menus; menus can
+									be moved without having to recalculate the positions of its
+									items.</span>
+							</div>
+						</td>
+						<td>
+							<div id="rect_item" class="multitext">
+								<p1>X </p1><input type="number" class="optionnumberbox" id="x_item" /><br />
+								<p1>Y </p1><input type="number" class="optionnumberbox" id="y_item" /><br />
+								<p1>W </p1><input type="number" class="optionnumberbox" id="width_item" /><br />
+								<p1>H </p1><input type="number" class="optionnumberbox" id="height_item" /><br />
+								<select class="optionselectbox" id="alignx_item">
+									<option value="0">HORIZONTAL_ALIGN_SUBLEFT</option>
+									<option value="1">HORIZONTAL_ALIGN_LEFT</option>
+									<option value="2">HORIZONTAL_ALIGN_CENTER</option>
+									<option value="3">HORIZONTAL_ALIGN_RIGHT</option>
+									<option value="4">HORIZONTAL_ALIGN_FULLSCREEN</option>
+								</select>
+								<select class="optionselectbox" id="aligny_item">
+									<option value="0">VERTICAL_ALIGN_SUBTOP</option>
+									<option value="1">VERTICAL_ALIGN_TOP</option>
+									<option value="2">VERTICAL_ALIGN_CENTER</option>
+									<option value="3">VERTICAL_ALIGN_BOTTOM</option>
+									<option value="4">VERTICAL_ALIGN_FULLSCREEN</option>
+								</select>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="style_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								style
+								<span class="tooltiptext">Fill style of the rect.</span>
+							</div>
+						</td>
+						<td>
+							<select class="optionselectbox" id="style_item">
+								<option value="0">WINDOW_STYLE_EMPTY</option>
+								<option value="1">WINDOW_STYLE_FILLED</option>
+								<option value="3">WINDOW_STYLE_SHADER</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="backcolor_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								backcolor
+								<span class="tooltiptext">Sets background color for the item when `style' is set to
+									WINDOW_STYLE_FILLED.</span>
+							</div>
+						</td>
+						<td>
+							<div id="backcolor_item" class="multitext">
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="r_item" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="g_item" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="b_item" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="a_item" />
+							</div>
+							<input id="backcolor_item_picker" type="color" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="forecolor_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								forecolor
+								<span class="tooltiptext">Sets foreground color for the item. Most prominent use is
+									setting text color, although it also influences the color of
+									any alpha-valued images.</span>
+							</div>
+						</td>
+						<td>
+							<div id="forecolor_item" class="multitext">
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="r_item" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="g_item" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="b_item" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="a_item" />
+							</div>
+							<input id="forecolor_item_picker" type="color" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="visible_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								visible
+								<span class="tooltiptext">Sets the visibility of the item. "0" prevents it from being
+									drawn, "1" (or any other value) causes it to be drawn. Can
+									also use a expression e.g. when(dvarString("test") ==
+									"text") (not supported on Menu Builder)</span>
+							</div>
+						</td>
+						<td>
+							<input type="checkbox" class="optioncheckbox" id="visible_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="exp_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								exp
+								<span class="tooltiptext">Expression. This can be used for displaying parts of the
+									itemDef using a expression. Expressions include:
+									text(dvarString("")) rect X(dvarInt()) rect Y(dvarFloat()
+									rect W(dvarInt()) rect H(dvarFloat))
+									material(dvarString("))</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="exp_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="border_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								border
+								<span class="tooltiptext">Sets a border style for the item.</span>
+							</div>
+						</td>
+						<td>
+							<select class="optionselectbox" id="border_item">
+								<option value="0">WINDOW_BORDER_NONE</option>
+								<option value="1">WINDOW_BORDER_FULL</option>
+								<option value="2">WINDOW_BORDER_HORZ</option>
+								<option value="3">WINDOW_BORDER_VERT</option>
+								<option value="5">WINDOW_BORDER_RAISED</option>
+								<option value="6">WINDOW_BORDER_SUNKEN</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="bordersize_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								bordersize
+								<span class="tooltiptext">Sets the thickness of the border. The border is drawn on
+									the inside of the item rect.</span>
+							</div>
+						</td>
+						<td>
+							<input type="number" min="0" class="optionnumberbox" id="bordersize_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="bordercolor_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								bordercolor
+								<span class="tooltiptext">Sets border color.</span>
+							</div>
+						</td>
+						<td>
+							<div id="bordercolor_item" class="multitext">
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="r_item" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="g_item" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="b_item" />
+								<input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="a_item" />
+							</div>
+							<input id="bordercolor_item_picker" type="color" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="type_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								type
+								<span class="tooltiptext">Sets the item type. If not specified, the default is
+									ITEM_TYPE_TEXT.</span>
+							</div>
+						</td>
+						<td>
+							<select class="optionselectbox" id="type_item">
+								<option value="0">ITEM_TYPE_TEXT</option>
+								<option value="1">ITEM_TYPE_BUTTON</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="text_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								text
+								<span class="tooltiptext">Sets the item type. If not specified, the default is
+									ITEM_TYPE_TEXT.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="text_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="textscale_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								textscale
+								<span class="tooltiptext">Scale the text size. A scale of 1.0 is 48 pixels tall
+									(textscale = height / 48).
+								</span>
+							</div>
+						</td>
+						<td>
+							<input type="number" class="optionnumberbox" id="textscale_item" min="0" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="textstyle_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								textstyle
+								<span class="tooltiptext">Specifies a special effect to the text.</span>
+							</div>
+						</td>
+						<td>
+							<select class="optionselectbox" id="textstyle_item">
+								<option value="0">ITEM_TEXTSTYLE_NORMAL</option>
+								<option value="1">ITEM_TEXTSTYLE_BLINK</option>
+								<option value="3">ITEM_TEXTSTYLE_SHADOWED</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="textalign_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								textalign
+								<span class="tooltiptext">Determines where the horizontal alignment point is applied
+									to text.</span>
+							</div>
+						</td>
+						<td>
+							<select class="optionselectbox" id="textalign_item">
+								<option value="0">ITEM_ALIGN_LEFT</option>
+								<option value="1">ITEM_ALIGN_CENTER</option>
+								<option value="2">ITEM_ALIGN_RIGHT</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="textalignx_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								textalignx
+								<span class="tooltiptext">Horizontal text alignment in pixels (of 640 max) from left
+									edge of rect to alignment point of text.</span>
+							</div>
+						</td>
+						<td>
+							<input type="number" class="optionnumberbox" id="textalignx_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="textaligny_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								textaligny
+								<span class="tooltiptext">Vertical text alignment in pixels (of 480 max) from top
+									edge of rect to bottom of text.</span>
+							</div>
+						</td>
+						<td>
+							<input type="number" class="optionnumberbox" id="textaligny_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="background_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								background
+								<span class="tooltiptext">Provided string is taken as a shader name or image file to
+									display as the item's background, confined within the item
+									rect. Rect's `style' has to be set to WINDOW_STYLE_SHADER.
+									The background image is scaled, ignoring aspect ratios, to
+									fill the rect.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="background_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="action_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								action
+								<span class="tooltiptext">Runs the provided script when the mouse clicks in/on the
+									item rect or when the Enter key is pressed while item has
+									focus.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="action_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="onFocus_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								onFocus
+								<span class="tooltiptext">The given script is run when the item gets focus.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="onFocus_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="leaveFocus_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								leaveFocus
+								<span class="tooltiptext">The provided script is run when the item loses focus.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="leaveFocus_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="mouseEnter_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								mouseEnter
+								<span class="tooltiptext">Runs the provided script when the mouse enter the item's
+									rect.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="mouseEnter_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="mouseExit_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								mouseExit
+								<span class="tooltiptext">Runs the provided script when the mouse leaves the item's
+									rect.</span>
+							</div>
+						</td>
+						<td>
+							<input type="text" row="1" class="optionstextbox" id="mouseExit_item" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" class="enabledcheckbox" id="decoration_item_enable" />
+						</td>
+						<td>
+							<div class="tooltip optiontext">
+								decoration
+								<span class="tooltiptext">Disable decoration for buttons</span>
+							</div>
+						</td>
+						<td>
+							<input type="checkbox" style="display: none" class="optioncheckbox" id="decoration_item" />
+						</td>
+					</tr>
+				</table>
+			</div>
+		</details>
+		<details class="extrathicc">
+			<summary>Images</summary>
+			<div class="optionbackground imagelisttoggle">
+				<div class="upload-btn-wrapper">
+					<button type="button"  class="btn1 margin-10px" id="">
+						Upload images
+					</button>
+					<input type="file" style="cursor: pointer;" id="uploadbackground" accept="image/*" multiple />
+				</div>
+				<table id="imagelist"></table>
+			</div>
+		</details>
+	</div>
 
-            <p1 id="classtoggle" class="cursor extrathicc">ItemDef Options</p1>
+	<div class="main">
+		<canvas class="canvas" id="screencanvas"></canvas>
+		<canvas class="canvas" id="canvas"></canvas>
 
-            <div class="itemdefoptions optionbackground" id="itemdefoptions">
-                <button type="button"  class="btn1" id="newitemdef">New itemDef</button>
-                <button type="button" class="btn1" id="finditemdef">Find</button>
-                <table id="itemdefoptiontable">
-                    <tr>
-                        <td><input type="checkbox" class="enabledcheckbox" id="name_item_enable"></td>
-                        <td>
-                            <div class="tooltip optiontext">Name
-                                <span class="tooltiptext">Sets a name for the item. Manipulation of an item is done through its name.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <textarea row="1" class="optionstextbox" id="name_item"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="rect_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">rect
-                                <span class="tooltiptext">Defines a rectangular area within a menu. The item's rect is positioned relative to the menu's rect; i.e. the menu's rect
-                                acts as a "mini-screen" for the coordinates of item rect. This shifting eases the relocating of menus; menus can be moved
-                                without having to recalculate the positions of its items.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="rect_item" class="multitext">
-                                <p1>X </p1><input type="number" class="optionnumberbox" id="x_item"><br>
-                                <p1>Y </p1><input type="number" class="optionnumberbox" id="y_item"><br>
-                                <p1>W </p1><input type="number" class="optionnumberbox" id="width_item"><br>
-                                <p1>H </p1><input type="number" class="optionnumberbox" id="height_item"><br>
-                                <select class="optionselectbox" id="alignx_item">
-                                    <option value="0">HORIZONTAL_ALIGN_SUBLEFT</option>
-                                    <option value="1">HORIZONTAL_ALIGN_LEFT</option>
-                                    <option value="2">HORIZONTAL_ALIGN_CENTER</option>
-                                    <option value="3">HORIZONTAL_ALIGN_RIGHT</option>
-                                    <option value="4">HORIZONTAL_ALIGN_FULLSCREEN</option>
-                                </select>
-                                <select class="optionselectbox" id="aligny_item">
-                                    <option value="0">VERTICAL_ALIGN_SUBTOP</option>
-                                    <option value="1">VERTICAL_ALIGN_TOP</option>
-                                    <option value="2">VERTICAL_ALIGN_CENTER</option>
-                                    <option value="3">VERTICAL_ALIGN_BOTTOM</option>
-                                    <option value="4">VERTICAL_ALIGN_FULLSCREEN</option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="style_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">style
-                                <span class="tooltiptext">Fill style of the rect.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <select class="optionselectbox" id="style_item">
-                                <option value="0">WINDOW_STYLE_EMPTY</option>
-                                <option value="1">WINDOW_STYLE_FILLED</option>
-                                <option value="3">WINDOW_STYLE_SHADER</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="backcolor_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">backcolor
-                                <span class="tooltiptext">Sets background color for the item when `style' is set to WINDOW_STYLE_FILLED.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="backcolor_item" class="multitext">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="r_item">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="g_item">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="b_item">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="a_item">
-                            </div>
-                            <input id="backcolor_item_picker" type="color" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="forecolor_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">forecolor
-                                <span class="tooltiptext">Sets foreground color for the item. Most prominent use is setting text color, although it also influences the color of any
-                                alpha-valued images.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="forecolor_item" class="multitext">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="r_item">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="g_item">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="b_item">
-                                <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="a_item">
-                            </div>
-                            <input id="forecolor_item_picker" type="color" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="visible_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">visible
-                                <span class="tooltiptext">Sets the visibility of the item. "0" prevents it from being drawn, "1" (or any other value) causes it to be drawn. Can also use a expression e.g. when(dvarString("test") == "text") (not supported on Menu Builder)</span>
-                            </div>
-                        </td>
-                        <td><input type="checkbox" class="optioncheckbox" id="visible_item"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="exp_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">exp
-                                <span class="tooltiptext">Expression. This can be used for displaying parts of the itemDef using a expression. Expressions include: text(dvarString("")) rect X(dvarInt()) rect Y(dvarFloat() rect W(dvarInt()) rect H(dvarFloat)) material(dvarString("))</span>
-                            </div>
-                        </td>
-                        <td><textarea row="1" class="optionstextbox" id="exp_item"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="border_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">border
-                                <span class="tooltiptext">Sets a border style for the item.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <select class="optionselectbox" id="border_item">
-                                <option value="0">WINDOW_BORDER_NONE</option>
-                                <option value="1">WINDOW_BORDER_FULL</option>
-                                <option value="2">WINDOW_BORDER_HORZ</option>
-                                <option value="3">WINDOW_BORDER_VERT</option>
-                                <option value="5">WINDOW_BORDER_RAISED</option>
-                                <option value="6">WINDOW_BORDER_SUNKEN</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="bordersize_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">bordersize
-                                <span class="tooltiptext">Sets the thickness of the border. The border is drawn on the inside of the item rect.</span>
-                            </div>
-                        </td>
-                        <td><input type="number" min="0" class="optionnumberbox" id="bordersize_item"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="bordercolor_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">bordercolor
-                                <span class="tooltiptext">Sets border color.</span>
-                            </div>
-                        </td>
-                        <td>
-                        <div id="bordercolor_item" class="multitext">
-                            <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="r_item">
-                            <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="g_item">
-                            <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="b_item">
-                            <input type="number" min="0" max="1" step="0.01" class="optionnumberbox" id="a_item">
-                        </div>
-                        <input id="bordercolor_item_picker" type="color" />
-                         </td>
+		<div class="notification" id="notification">
+			<button type="button" class="notificationExit" id="">X</button>
+			<h1 class="notificationHeader"></h1>
+			<p1 class="notificationText" id="notificationText"></p1>
+		</div>
+	</div>
 
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="type_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">type
-                                <span class="tooltiptext">Sets the item type. If not specified, the default is ITEM_TYPE_TEXT.</span>
-                            </div>
-                        </td>
-                        <td><select class="optionselectbox" id="type_item">
-                            <option value="0">ITEM_TYPE_TEXT</option>
-                            <option value="1">ITEM_TYPE_BUTTON</option>
-                        </select></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="text_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">text
-                                <span class="tooltiptext">Sets the item type. If not specified, the default is ITEM_TYPE_TEXT.</span>
-                            </div>
-                        </td>
-                        <td><textarea row="1" class="optionstextbox" id="text_item"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="textscale_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">textscale
-                                <span class="tooltiptext">Scale the text size. A scale of 1.0 is 48 pixels tall (textscale = height / 48). </span>
-                            </div>
-                        </td>
-                        <td><input type="number" class="optionnumberbox" id="textscale_item" min="0"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="textstyle_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">textstyle
-                                <span class="tooltiptext">Specifies a special effect to the text.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <select class="optionselectbox" id="textstyle_item">
-                                <option value="0">ITEM_TEXTSTYLE_NORMAL</option>
-                                <option value="1">ITEM_TEXTSTYLE_BLINK</option>
-                                <option value="3">ITEM_TEXTSTYLE_SHADOWED</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="textalign_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">textalign
-                                <span class="tooltiptext">Determines where the horizontal alignment point is applied to text.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <select class="optionselectbox" id="textalign_item">
-                                <option value="0">ITEM_ALIGN_LEFT</option>
-                                <option value="1">ITEM_ALIGN_CENTER</option>
-                                <option value="2">ITEM_ALIGN_RIGHT</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="textalignx_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">textalignx
-                                <span class="tooltiptext">Horizontal text alignment in pixels (of 640 max) from left edge of rect to alignment point of text.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <input type="number" class="optionnumberbox" id="textalignx_item">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="textaligny_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">textaligny
-                                <span class="tooltiptext">Vertical text alignment in pixels (of 480 max) from top edge of rect to bottom of text.</span>
-                            </div>
-                        </td>
-                        <td><input type="number" class="optionnumberbox" id="textaligny_item"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="background_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">background
-                                <span class="tooltiptext">Provided string is taken as a shader name or image file to display as the item's background, confined within the item rect.
-                                Rect's `style' has to be set to WINDOW_STYLE_SHADER. The background image is scaled, ignoring aspect ratios, to fill the
-                                rect.</span>
-                            </div>
-                        </td>
-                        <td> 
-                            <textarea row="1" class="optionstextbox" id="background_item"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="action_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">action
-                                <span class="tooltiptext">Runs the provided script when the mouse clicks in/on the item rect or when the Enter key is pressed while item has focus.</span>
-                            </div>
-                        </td>
-                        <td>
-                            <textarea row="1" class="optionstextbox" id="action_item"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="onFocus_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">onFocus
-                                <span class="tooltiptext">The given script is run when the item gets focus.</span>
-                            </div>
-                        </td>
-                        <td><textarea row="1" class="optionstextbox" id="onFocus_item"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="leaveFocus_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">leaveFocus
-                                <span class="tooltiptext">The provided script is run when the item loses focus.</span>
-                            </div>
-                        </td>
-                        <td><textarea row="1" class="optionstextbox" id="leaveFocus_item"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="mouseEnter_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">mouseEnter
-                                <span class="tooltiptext">Runs the provided script when the mouse enter the item's rect.</span>
-                            </div>
-                        </td>
-                        <td><textarea row="1" class="optionstextbox" id="mouseEnter_item"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="mouseExit_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">mouseExit
-                                <span class="tooltiptext">Runs the provided script when the mouse leaves the item's rect.</span>
-                            </div>
-                        </td>
-                        <td><textarea row="1" class="optionstextbox" id="mouseExit_item"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" class="enabledcheckbox" id="decoration_item_enable">
-                        </td>
-                        <td>
-                            <div class="tooltip optiontext">decoration
-                                <span class="tooltiptext">Disable decoration for buttons</span>
-                            </div>
-                        </td>
-                        <td>
-                            <input type="checkbox" style="display: none" class="optioncheckbox" id="decoration_item">
-                        </td>
-                    </tr>
+	<div id="saveLoadMenu" class="saveLoadMenu">
+		<button type="button" id="loadsaveexit" class="notificationExit">
+			X
+		</button>
+		<h1 class="saveLoadHeader">Save files</h1>
+		<button type="button" class="btn1" onclick="createNewSave()">
+			Create new save
+		</button>
+		<input type="text" row="1" class="optionstextbox" placeholder="Project name" id="projectName" />
 
-                </table>
+		<table id="loadSaveTable" class="loadSaveTable"></table>
+	</div>
 
-            </div>
+	<!-- hidden images used for canvas -->
+	<img id="screen_image_1" style="display: none" src="images/screen_image_1.jpg" />
+	<img id="screen_image_2" style="display: none" src="images/screen_image_2.jpg" />
+	<img id="screen_image_3" style="display: none" src="images/screen_image_3.jpg" />
 
-            <p1 class="extrathicc cursor" id="imagelisttoggle">Images</p1>
-            <div class="optionbackground imagelisttoggle">
-                <div class="upload-btn-wrapper">
-                    <button type="button" class="btn1 margin-10px" id="">Upload images</button>
-                    <input type="file" id="uploadbackground"  accept="image/*" multiple>
-                </div>
-                <table id="imagelist">
-                    
-                </table>
-            </div>
-        
-        </div>
+	<script src="js/menuBuilder.js"></script>
+</body>
 
-        <div class="main">
-            <canvas class="canvas" id="screencanvas"></canvas>
-            <canvas class="canvas" id="canvas" ></canvas>
-
-            <div class="notification" id="notification">
-                <button type="button" class="notificationExit" id="">X</button>
-                <h1 class="notificationHeader"></h1>
-                <p1 class="notificationText" id="notificationText"></p1>
-            </div>
-        </div>
-
-        <div id="saveLoadMenu" class="saveLoadMenu">
-            <button type="button" id="loadsaveexit" class="notificationExit">X</button>
-            <h1 class="saveLoadHeader">Save files</h1>
-            <button type="button" class="btn1" onclick="createNewSave()">Create new save</button>
-            <textarea row="1" class="optionstextbox" placeholder="Project name" id="projectName"></textarea>
-            
-
-                           
-            <table id="loadSaveTable" class="loadSaveTable">
-
-            </table>
-        </div>
-
-
-        <!-- hidden images used for canvas -->
-        <img id="screen_image_1" style="display: none;" src="images/screen_image_1.jpg">
-        <img id="screen_image_2" style="display: none;" src="images/screen_image_2.jpg">
-        <img id="screen_image_3" style="display: none;" src="images/screen_image_3.jpg">
-
-    <!-- Toggle script -->
-    <script>
-        $(document).ready(function(){
-            $("#menutoggle").click(function(){
-                $(".menudefoptions").slideToggle(500);
-            });
-        });
-        $(document).ready(function () {
-                $("#classtoggle").click(function () {
-                    $(".itemdefoptions").slideToggle(500);
-                });
-            });
-        $(document).ready(function () {
-                $("#optiontoggle").click(function () {
-                    $(".buildoptions").slideToggle();
-                });
-            });
-        $(document).ready(function () {
-                $("#helptoggle").click(function () {
-                    $(".helpoptions").slideToggle(500);
-                });
-            });
-        $(document).ready(function () {
-                $("#menudeflisttoggle").click(function () {
-                    $(".menudeflistdiv").slideToggle(500);
-                });
-            });
-         $(document).ready(function () {
-                $("#itemdeftoggle").click(function () {
-                    $(".itemdeftogglelist").slideToggle(500);
-                });
-            });
-        $(document).ready(function () {
-            $("#introtoggle").click(function () {
-                $(".introtoggle").slideToggle(500);
-            });
-        });
-        $(document).ready(function () {
-            $("#imagelisttoggle").click(function () {
-                $(".imagelisttoggle").slideToggle(500);
-            });
-        });
-        $(document).ready(function () {
-                $("#saveloadtoggle").click(function () {
-                    $(".saveload").slideToggle(500);
-                });
-            });
-
-            
-        
-    </script>
-
-    <script src="js/menuBuilder.js"></script>
-    </body>
 </html>

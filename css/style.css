@@ -1,187 +1,186 @@
 /* The sidebar menu */
 .sidenav {
-    height: 100%; 
-    width: 500px; 
-    position: fixed;
-    top: 0; 
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-left: 10px;
+  height: 100%;
+  width: 500px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-left: 10px;
 }
-p1{
-    color: #fff;
-    font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-
-.title{
-    margin:20px;
-    width: 400px;
+p1 {
+  color: #fff;
+  font-size: 15px;
+  font-family: "Courier New", Courier, monospace;
 }
 
-/*menudef and itemdef options*/  
-.optionstextbox{
-    resize: none;
+.title {
+  margin: 20px;
+  width: 400px;
 }
 
-a:visited{
-    color: rgb(64, 204, 255);
-}
-a{
-    color: #76DAFF;
+/*menudef and itemdef options*/
+.optionstextbox {
+  resize: none;
 }
 
-.optionbackground{
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    margin: 10px;
-    margin-left: 0px;
-    background-color: rgb(36, 35, 35);
+a:visited {
+  color: rgb(64, 204, 255);
+}
+a {
+  color: #76daff;
 }
 
-.snapgrid{
-    width: 50px;
-}
-textarea:disabled{
-    background: #919191;
-}
-input:disabled{
-    background: #919191;
-}
-select:disabled{
-    background: #919191;
+.optionbackground {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin: 10px;
+  margin-left: 0px;
+  background-color: rgb(36, 35, 35);
 }
 
-textarea{
-    outline: none;
-    border: none;
-    border-radius:3px;
-    width: 300px;
-    height: 30px;
-    vertical-align: middle;
-    font-family: 'Courier New', Courier, monospace;
-    line-height: 30px;
-    text-indent: 5px;
-    overflow-x: hidden;
-    white-space: nowrap;
+.snapgrid {
+  width: 50px;
 }
-input[type="number"]{
-    width: 50px;
-    height: 30px;
-    text-align: center;
+textarea:disabled {
+  background: #919191;
 }
-input{
-    outline: none;
-    border: none;
-    border-radius:3px;
-    font-family: 'Courier New', Courier, monospace;
-    margin-top: 2px;
+input:disabled {
+  background: #919191;
 }
-select{
-    outline: none;
-    border: none;
-    border-radius:3px;
-    font-family: 'Courier New', Courier, monospace;
-    width: 300px;
-    margin-top: 2px;
-    height: 30px;
-    text-align: center;
+select:disabled {
+  background: #919191;
 }
 
+textarea {
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  width: 300px;
+  height: 30px;
+  vertical-align: middle;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 30px;
+  text-indent: 5px;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+input[type="number"] {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+}
+input {
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-family: "Courier New", Courier, monospace;
+  margin-top: 2px;
+}
+select {
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-family: "Courier New", Courier, monospace;
+  width: 300px;
+  margin-top: 2px;
+  height: 30px;
+  text-align: center;
+}
 
-
-.optiontext{
-    color: #fff;
+.optiontext {
+  color: #fff;
 }
 
 .tooltip {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .tooltip .tooltiptext {
-    visibility: hidden;
-    top: -5px;
-    left: 105%; 
-    width: 350px;
-    background-color: rgb(0, 0, 0);
-    color: #fff;
-    text-align: center;
-    border-radius: 0px;
-    padding: 5px 0;
+  visibility: hidden;
+  top: -5px;
+  left: 105%;
+  width: 350px;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  text-align: center;
+  border-radius: 0px;
+  padding: 5px 0;
 
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 /*used for selected MenuDef / ItemDef text */
-.selected{
-    color: #fff;
+.selected {
+  color: #fff;
 }
 
-.saveLoadMenu{
-    display: none;
-    min-width: 30%;
-    max-width: 50%;
-    height: 80%;
-    background-color: #111;
-    position: absolute;
-    margin-left: 35%;
-    margin-right: 20%;
-    margin-top: 3%;
-    padding: 10px;
-    border-radius: 5px;
+.saveLoadMenu {
+  display: none;
+  min-width: 30%;
+  max-width: 50%;
+  height: 80%;
+  background-color: #111;
+  position: absolute;
+  margin-left: 35%;
+  margin-right: 20%;
+  margin-top: 3%;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.saveLoadHeader{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 35px;
-    color: #fff;
-    text-decoration: underline;
+.saveLoadHeader {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 35px;
+  color: #fff;
+  text-decoration: underline;
 }
 
-.loadSaveTable{
-    font-family: 'Courier New', Courier, monospace;
-    color: #fff;
+.loadSaveTable {
+  font-family: "Courier New", Courier, monospace;
+  color: #fff;
 }
-.loadSaveTable tr{
-    text-align: center;
+.loadSaveTable tr {
+  text-align: center;
 }
-
-
 
 /* Style page content */
 .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
 }
 
 /*canvas stlye*/
-.canvas{
-    margin-left: 25%;
-    margin-top: 5%;
-    padding: 0px;
-    /*remove border, just here for visual aid */
-    border-style: solid;
-    border-width: 2px;
-    border-color: #111;
-    position: absolute;
+.canvas {
+  margin-left: 25%;
+  margin-top: 5%;
+  padding: 0px;
+  /*remove border, just here for visual aid */
+  border-style: solid;
+  border-width: 2px;
+  border-color: #111;
+  position: absolute;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 
 /* Buttons and stuff */
@@ -192,14 +191,15 @@ button {
   text-align: center;
   cursor: pointer;
   outline: none;
-  color: #76DAFF;
+  color: #76daff;
   background-color: rgb(70, 70, 70);
   border: none;
   /* box-shadow: 0 5px #e7e7e7; */
 }
 
-
-button:hover {background-color: #333}
+button:hover {
+  background-color: #333;
+}
 
 button:active {
   background-color: #333;
@@ -207,32 +207,28 @@ button:active {
   transform: translateY(2px);
 }
 
-
-.customslider::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    background-color: #F5F5F5;
+.customslider::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
 }
 
-.customslider::-webkit-scrollbar
-{
-    width: 5px;
-    background-color: #F5F5F5;
+.customslider::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
 }
 
-.customslider::-webkit-scrollbar-thumb
-{
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #76DAFF;
+.customslider::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #76daff;
 }
 .upload-btn-wrapper {
   position: relative;
   overflow: hidden;
   display: inline-block;
 }
-.upload-btn-wrapper input[type=file] {
+.upload-btn-wrapper input[type="file"] {
   font-size: 100px;
   position: absolute;
   left: 0;
@@ -240,70 +236,89 @@ button:active {
   opacity: 0;
 }
 
-
 /*
 notification
 */
 
-.notification{
-    background:#76DAFF;
-    width: 400px;
-    height: 100px;
-    position: absolute;
-    right: 2%;
-    border-radius: 5px;
-    padding: 10px;
-    display: none;
-    margin-top: 10px;
-    z-index: 100;
+.notification {
+  background: #76daff;
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  right: 2%;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+  margin-top: 10px;
+  z-index: 100;
 }
-.notificationHeader{
-    text-align: center;
-    color: #4f0505;   
-    text-decoration: underline; 
-    font-family: 'Courier New', Courier, monospace;
-    text-align: left;
-    font-size: 18px;
+.notificationHeader {
+  text-align: center;
+  color: #4f0505;
+  text-decoration: underline;
+  font-family: "Courier New", Courier, monospace;
+  text-align: left;
+  font-size: 18px;
 }
-.notificationText{
-    color: #111;
-    text-align: left;
-    padding: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
-    text-indent: 0px;
+.notificationText {
+  color: #111;
+  text-align: left;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  text-indent: 0px;
 }
-.notificationExit{
-    border-radius: 5px;
-    margin: 0px;
-    color: black;
-    float: right;
-    background-color: rgb(167, 232, 255);
+.notificationExit {
+  border-radius: 5px;
+  margin: 0px;
+  color: black;
+  float: right;
+  background-color: rgb(167, 232, 255);
 }
-.notificationExit:hover{
-    background-color: #ffbdbd;
+.notificationExit:hover {
+  background-color: #ffbdbd;
 }
 
 /* custom attributes */
 
-.margin-10px{
-    margin-bottom: 10px;
+.margin-10px {
+  margin-bottom: 10px;
 }
 
-body{
-    background-color: #e7e7e7;
+body {
+  background-color: #e7e7e7;
 }
 
-.cursor{
+.cursor {
+  cursor: pointer;
+  display: block;
+  padding-top: 5px;
+}
+
+.extrathicc {
+  font-size: 20px;
+  font-family: sans-serif;
+  margin-right: 5px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+details {
+  padding-block-start: 5px;
+  color: white;
+  overflow: hidden;
+  summary {
+    list-style: none;
     cursor: pointer;
-    display: block;
-    padding-top: 5px;
+    border-bottom: 1px solid #76daff;
+  }
 }
 
-.extrathicc{
-    font-size: 20px;
-    font-family: sans-serif;
-    border-bottom: 1px solid #76DAFF;
-    margin-right: 5px;
-    font-family: 'Courier New', Courier, monospace;
+input[type="text"] {
+  width: 100%;
+  padding: 6px;
+}
+
+input[type="number"] {
+  padding: 6px;
+  width: 70px;
 }
