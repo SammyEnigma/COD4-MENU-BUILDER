@@ -156,17 +156,6 @@
             y: 0
         }
 
-        this.debugConsole = () =>{
-            var fullInfo = " === ITEM INFO === " + "\nNAME: " + this.prop.name + "\nrecX: " + this.prop.rect.x + "\nrecY: " + this.prop.rect.y + "\nrecWid: " + this.prop.rect.width + "\nrecHeight: " + this.prop.rect.height
-            + "\nrecAlignX: " + this.prop.rect.alignx + "\nrecAlignY: " + this.prop.rect.aligny + "\nstyle: " + this.prop.style + "\nbackcolR: " + this.prop.backcolor.r + "\nbackcolG: " + this.prop.backcolor.g
-            + "\nbackcolB: " + this.prop.backcolor.b + "\nbackcolA: " + this.prop.backcolor.a + "\nforecolR: " + this.prop.forecolor.r + "\nforecolG: " + this.prop.forecolor.g + "\nforecolB: " + this.prop.forecolor.b
-            + "\nforecolA: " + this.prop.forecolor.a + "\nborder: " + this.prop.border + "\nbordersize: " + this.prop.bordersize + "\nbordercolR: " + this.prop.bordercolor.r + "\nbordercolG: " + this.prop.bordercolor.g 
-            + "\nbordercolB: " + this.prop.bordercolor.b + "\nbordercolA: " + this.prop.bordercolor.a +  "\nvisible: " + this.prop.visible + "\ntype: " + this.prop.type + "\ntext: " + this.prop.text + "\ntextScale: " + this.prop.textscale
-            + "\ntextStyle: " + this.prop.textstyle + "\ntextAlign: " + this.prop.textalign + "\ntextAlignX: " + this.prop.textalignx + "\ntextAlignY: " + this.prop.textaligny + "\nbackground: " + this.prop.background
-            + "\naction: " + this.prop.action + "\onFocus: " + this.prop.onFocus + "\nleaveFocus: " + this.prop.leaveFocus + "\nmouseEnter: " + this.prop.mouseEnter + "\nmouseExit: " + this.prop.mouseExit 
-            + "\ndecoration: " + this.prop.decoration + "\n=================";
-            console.log(fullInfo);
-        }
 
         this.draw = () =>{
             if(this.options.exp){
@@ -517,12 +506,6 @@
         this.itemDefList = [];
         this.selectedItemDef;
 
-        this.debugConsole = () =>{
-            var fullInfo = " === MENU INFO === " + "\nNAME: " + this.prop.name + "\nrecX: " + this.prop.rect.x + "\nrecY: " + this.prop.rect.y + "\nrecWid: " + this.prop.rect.width + "\nrecHeight: " + this.prop.rect.height
-            + "\nblur: " + this.prop.blurworld + "\nborder: " + this.prop.border + "\nbordersize: " + this.prop.bordersize + "\nbordercolR: " + this.prop.bordercolor.r + "\nbordercolG: " + this.prop.bordercolor.g 
-            + "\nbordercolB: " + this.prop.bordercolor.b + "\nbordercolA: " + this.prop.bordercolor.a + "\nonOpen: " + this.prop.onOpen + "\nonClose: " + this.prop.onClose + "\nonESC: " + this.prop.onESC + "\n=================";
-            console.log(fullInfo);
-        }
         
         this.draw = () =>{
             const xoffset = ((screenSize.x-640)/2)*zoomAmount;
@@ -590,7 +573,6 @@
 
     //  EVENT LISTENERS //
     window.onload = () => {
-        browserCheck();
         optionsEventListeners();
 
         document.getElementById("newitemdef").addEventListener("click", () => {
@@ -900,7 +882,7 @@
                 rect.height += (mousepos.y - oldMousePos.y) / zoomAmount;
             }
             else{
-                rect.x += ((mousepos.x - oldMousePos.x) / zoomAmount);
+                rect.x +=  ((mousepos.x - oldMousePos.x) / zoomAmount);
                 rect.y += ((mousepos.y - oldMousePos.y) / zoomAmount);
             }  
         }
@@ -994,16 +976,6 @@
             ctx.fillRect((menuCanvas.width / 2) - 1, 0, 2, menuCanvas.height);
         }
     }
-    //stuff doesnt work on edge and cba to test on safari
-    browserCheck = () =>{
-        var isIE = /*@cc_on!@*/false || !!document.documentMode;
-        var isEdge = !isIE && !!window.StyleMedia;
-        var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-        if(isEdge || isSafari){
-            alert("This website may not work properly on your browser. Please use the latest version of chrome or firefox instead.");
-        }
-    }
-
     
 
     //draw border function
@@ -2063,7 +2035,6 @@
                                         menudef.prop[currentMenuVarOriginal[0]] = undefined;
                                         menudef.prop[currentMenuVarOriginal[0]] = getDefOp(currentMenuVar[1]);
                                         menudef.options[currentMenuVarOriginal[0]] = true;
-                                        //menudef.debugConsole();
                                         continue;
                                     }
                                 }
@@ -2164,10 +2135,8 @@
                                     if(currentItemVar[0] === supportedItemVars[r]) {
                                         if(currentItemVar[0] === "text") {
                                             itemdef.prop[currentItemVar[0]] = getDefOp(currentLine.substring(5, currentLine.length));
-                                            //itemdef.debugConsole();
                                         } else {
                                             itemdef.prop[currentItemVarOriginal[0]] = getDefOp(currentItemVar[1]);
-                                            //itemdef.debugConsole();
                                         }
                                         itemdef.options[currentItemVarOriginal[0]] = true;
                                         //console.log(currentItemVar[0] + " to: " + getDefOp(currentItemVar[1]));
